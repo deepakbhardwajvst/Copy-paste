@@ -33,18 +33,22 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+.paste{
+padding: 27rem 11rem;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 1.6rem 11rem;
+  padding: 2rem 1rem;
   font-size: 1em;
   font-weight: 500;
   /* color: #f9f9f9; */
   font-family: inherit;
-  background-color: #ffffff;
+  background-color: #300404ff;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #ffffff;
+  
 }
 button:hover {
   border-color: #646cff;

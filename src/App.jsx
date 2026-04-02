@@ -19,41 +19,58 @@ function App() {
     try {
       const allText = items.join("\n");
       await navigator.clipboard.writeText(allText);
-      alert("All text copied!");
+      
     } catch (err) {
       console.error("Copy error:", err);
       alert("Copy failed!");
     }
   };
 
+  // ✅ CLEAR FUNCTION
+  const handleClear = () => {
+    setItems([]);
+  };
+
   return (
-    <div className="  p-6">
-      <div className="fixed top-4 left-4 flex gap-4 z-50">
-        <button
-          onClick={handlePaste}
-          className="bg-blue-600 px-16 py-2 rounded text-nowrap hover:bg-blue-700 transition text-black"
-        >
-          Paste & Create H4
-        </button>
+  <div className="flex">
+<div>
+    {/* LEFT PANEL (BUTTONS) */}
+    <div className="fixed left-0 top-0 h-screen w-72  z-50 flex flex-row gap-4 p-4 shadow">
 
-        <button
-          onClick={handleCopy}
-          className="bg-green-600 px-8 py-2 rounded text-nowrap hover:bg-green-700 transition text-black"
-        >
-          Copy All
-        </button>
-      </div>
+      <button
+        onClick={handlePaste}
+        className="bg-blue-600 paste w-full text-nowrap h-32 rounded hover:bg-blue-700 transition text-black flex items-center justify-center"
+      >
+        Paste & Create H4
+      </button>
 
-      {/* RIGHT SIDE FIXED PANEL */}
-      <div className="mt-20">
-        {items.map((item, index) => (
-          <p key={index} className="text-white-800 border-b pb-0.1 text-nowrap">
-            {item}
-          </p>
-        ))}
-      </div>
+      <button
+        onClick={handleCopy}
+        className="bg-green-600 w-full h-12 rounded  text-nowrap hover:bg-green-700 transition text-black flex items-center justify-center"
+      >
+        Copy All
+      </button>
+
+      <button
+        onClick={handleClear}
+        className="bg-red-600 w-full h-12 rounded  text-nowrap hover:bg-red-700 transition text-black flex items-center justify-center"
+      >
+        Clear All
+      </button>
+
     </div>
-  );
+</div>
+    {/* RIGHT CONTENT */}
+    <div className="ml-72 p-4 w-full">
+      {items.map((item, index) => (
+        <p key={index} className="text-black text-nowrap border-b pb-1">
+          {item}
+        </p>
+      ))}
+    </div>
+
+  </div>
+);
 }
 
 export default App;
