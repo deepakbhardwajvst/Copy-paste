@@ -51,12 +51,7 @@ function App() {
         Copy All
       </button>
 
-      <button
-        onClick={handleClear}
-        className="bg-red-600 w-full h-12 rounded  text-nowrap hover:bg-red-700 transition text-black flex items-center justify-center"
-      >
-        Clear All
-      </button>
+  
 
     </div>
 </div>
