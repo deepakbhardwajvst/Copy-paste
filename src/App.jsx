@@ -19,7 +19,7 @@ function App() {
     try {
       const allText = items.join("\n");
       await navigator.clipboard.writeText(allText);
-      
+      alert("Copy done");
     } catch (err) {
       console.error("Copy error:", err);
       alert("Copy failed!");
