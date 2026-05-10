@@ -4,15 +4,20 @@ function App() {
   const [items, setItems] = useState([]);
 
   const handlePaste = async () => {
-    try {
-      const clipboardText = await navigator.clipboard.readText();
-      const newText = " " + clipboardText;
-      setItems((prev) => [...prev, newText]);
-    } catch (err) {
-      console.error("Clipboard error:", err);
-      alert("Clipboard access denied!");
-    }
-  };
+  try {
+    const clipboardText = await navigator.clipboard.readText();
+
+    // ? se pehle ka text hi lo
+    const textBeforeQuestion = clipboardText.split("?")[0];
+
+    const newText = " " + textBeforeQuestion;
+
+    setItems((prev) => [...prev, newText]);
+  } catch (err) {
+    console.error("Clipboard error:", err);
+    alert("Clipboard access denied!");
+  }
+};
 
   // Copy all <p> text
   const handleCopy = async () => {
