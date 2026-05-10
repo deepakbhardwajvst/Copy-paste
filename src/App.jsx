@@ -63,7 +63,7 @@ function App() {
     {/* RIGHT CONTENT */}
     <div className="ml-72 p-4 w-full">
       {items.map((item, index) => (
-        <p key={index} className="text-black text-nowrap border-b pb-1">
+        <p key={index} className="text-black  ml-16 text-nowrap border-b pb-1">
           {item}
         </p>
       ))}
